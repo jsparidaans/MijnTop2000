@@ -1,8 +1,8 @@
 package org.example.joeysparidaans.mijntop2000.database
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.ColumnInfo
 
 @Entity(tableName = "song_table")
 data class Song(
@@ -26,6 +26,9 @@ data class Song(
 
     @ColumnInfo(name = "previous_position")
     var previousPosition: Int,
+
+    @ColumnInfo(name = "delta_position")
+    var deltaPosition: Int = previousPosition - position,
 
     @ColumnInfo(name = "image_url")
     var image: String
