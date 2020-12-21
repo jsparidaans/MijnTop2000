@@ -12,12 +12,12 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
-interface Top2000Service {
+interface Top2000ApiService {
     @GET("&format=json")
     fun getTop2000():
             Call<String>
 
     object Top2000Api {
-        val retrofitService: Top2000Service by lazy { retrofit.create(Top2000Service::class.java) }
+        val RETROFIT_API_SERVICE: Top2000ApiService by lazy { retrofit.create(Top2000ApiService::class.java) }
     }
 }
